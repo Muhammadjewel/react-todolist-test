@@ -11,7 +11,7 @@ export default function TodoList() {
 
   const handleUpdateTodo = (updatedTodo) => {
     const newTodos = todos.map((todo) => {
-      todo.id === updatedTodo.id ? updatedTodo : todo;
+      return todo.id === updatedTodo.id ? updatedTodo : todo;
     });
     setTodos(newTodos);
   };
