@@ -14,7 +14,7 @@ export default function Todo({ todo, handleUpdateTodo, handleDeleteTodo }) {
     setEditing(!editing);
   };
 
-  const handleUpdateLabel = (e) => {
+  const handleEditTodo = (e) => {
     handleUpdateTodo({
       ...todo,
       label: e.target.value,
@@ -34,7 +34,7 @@ export default function Todo({ todo, handleUpdateTodo, handleDeleteTodo }) {
         />
 
         {editing === true ? (
-          <input type="text" value={todo.label} onChange={handleUpdateLabel} />
+          <input type="text" value={todo.label} onChange={handleEditTodo} />
         ) : (
           <span>{todo.label}</span>
         )}
