@@ -40,7 +40,12 @@ export default function Todo({ todo, handleUpdateTodo, handleDeleteTodo }) {
         )}
       </label>
 
-      <button onClick={handleEditClick}>{editing ? "Save" : "Edit"}</button>
+      <button
+        disabled={editing && !todo.label.length}
+        onClick={handleEditClick}
+      >
+        {editing ? "Save" : "Edit"}
+      </button>
       {!editing && <button onClick={handleDeleteClick}>Delete</button>}
     </li>
   );
